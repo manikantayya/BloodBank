@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:padding="10dp"
+    android:background="@drawable/img"
+    android:layout_height="match_parent"
+    tools:context=".RegisterPage">
+
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="50dp"
+        android:text="Sign Up"
+        android:textColor="@color/white"
+        android:textSize="40dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:layout_width="350dp"
+        android:id="@+id/Name"
+        android:layout_height="60dp"
+        android:layout_below="@+id/textView4"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="55dp"
+        android:drawableLeft="@drawable/ic_baseline_person_outline_24"
+        android:drawablePadding="10dp"
+        android:hint="Enter Name"
+        android:padding="10dp"
+        android:textColorHint="@color/white" />
+
+    <EditText
+        android:id="@+id/editTextTextEmailAddress2"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="241dp"
+        android:drawableLeft="@drawable/ic_outline_email_24"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="Enter a valid Email"
+        android:inputType="textEmailAddress"
+        android:padding="10dp"
+        android:textColorHint="@color/white" />
+
+    <EditText
+        android:id="@+id/editTextPhone"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/editTextTextEmailAddress2"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:drawableLeft="@drawable/ic_outline_phone_24"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="Enter a valid Phone Number"
+        android:inputType="phone"
+        android:padding="10dp"
+        android:textColorHint="@color/white" />
+
+    <EditText
+        android:id="@+id/editTextTextPassword2"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/editTextPhone"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:drawableLeft="@drawable/ic_outline_admin_panel_settings_24"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:padding="10dp"
+        android:textColorHint="@color/white" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextTextPassword2"
+        android:layout_alignParentEnd="true"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="109dp"
+        android:layout_marginEnd="65dp"
+        android:background="@drawable/button"
+        android:onClick="register"
+        android:text="REGISTER" />
+
+    <Button
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextTextPassword2"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="110dp"
+        android:background="@drawable/button"
+        android:text="BACK" />
+
+</RelativeLayout>
