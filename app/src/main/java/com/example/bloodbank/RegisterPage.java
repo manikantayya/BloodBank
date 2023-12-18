@@ -14,6 +14,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
@@ -61,7 +62,9 @@ public class RegisterPage extends AppCompatActivity {
             editTextTextPassword2.setError("Fill this field.");
         }
             if (!name.isEmpty() && !email.isEmpty() && !phone.isEmpty() && !pass.isEmpty()) {
+                Toast.makeText(RegisterPage.this, "please fill the all fields", Toast.LENGTH_SHORT).show();
                 RegisterUser(name, email, phone, pass);
+
             }
         }
 
@@ -71,7 +74,14 @@ public class RegisterPage extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         addToDatabase(task.getResult().getUser().getUid(), name, email, phone, pass);
                     } else {
-                        Toast.makeText(RegisterPage.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                        // Check if the user already exists
+                        if (task.getException() instanceof FirebaseAuthUserCollisionException) {
+                            Toast.makeText(RegisterPage.this, "You have already registered", Toast.LENGTH_LONG).show();
+                            startActivity(new Intent(RegisterPage.this, LoginPage.class));
+                            finish(); // Finish the current activity to prevent going back
+                        } else {
+                            Toast.makeText(RegisterPage.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                        }
                     }
                 });
     }
